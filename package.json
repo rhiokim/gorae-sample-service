@@ -1,0 +1,19 @@
+{
+  "name": "gorae-sample-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docker:build": "docker build --tag gorae-sample-service . && npm run docker:images",
+    "docker:images": "docker images | grep gorae-sample-service",
+    "service:create": "docker service create --publish 9000:9000 --name guid gorae-sample-service"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "uuid": "^2.0.3"
+  }
+}
