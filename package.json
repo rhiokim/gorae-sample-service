@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "docker:build": "docker build --tag gorae-sample-service . && npm run docker:images",
+    "docker:buildv1": "docker build --tag gorae-sample-service:v1 -f ./Dockerfile.v1 . && npm run docker:images",
     "docker:images": "docker images | grep gorae-sample-service",
     "service:create": "docker service create --publish 9000:9000 --name guid gorae-sample-service"
   },
